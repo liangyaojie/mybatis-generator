@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${package}.${moduleName}.mapper.${className}Mapper">
+    <resultMap id="base_result_map" type="${package}.${moduleName}.model.${className}">
+ #foreach ($column in $columns)
+ #if($column.columnName == $pk.columnName)
+    <id column="$column.columnName"  property="$column.attrname" />
+ #else
+    <result column="$column.columnName" property="$column.attrname" />
+ #end
+ #end
+  </resultMap>
+
+    <sql id="table_name">
+        ${tableName}
+    </sql>
+
+    <sql id="base_columns_to">
+    #foreach ($column in $columns)
+    $column.asColumnName
+    #end
+</sql>
+    <sql id="base_columns">
+    #foreach ($column in $columns)
+    $column.commaColumnName
+    #end
+</sql>
+</mapper>

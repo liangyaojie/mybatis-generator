@@ -1,0 +1,19 @@
+package ${package}.${moduleName}.mapper;
+
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * ${className}Mapper
+ * ${comments}
+ * 
+ * @author ${author}
+ * @date ${datetime}
+ * @since $!{since}
+ */
+@Repository
+public interface ${className}Mapper extends SuperMapper<${className}>
+{
+
+}
