@@ -40,6 +40,7 @@ public final class GenUtils {
     private final static String FILE_NAME_SERVICE = "Service.java.vm";
     private final static String FILE_NAME_SERVICEIMPL = "ServiceImpl.java.vm";
     private final static String FILE_NAME_CONTROLLER = "Controller.java.vm";
+    private final static String FILE_NAME_MANAGER = "Manager.java.vm";
     private final static String FILE_NAME_PAGE = "index.html.vm";
     private final static String TEMPLATE_PATH = "template/";
     private final static String PACKAGE = "package";
@@ -53,6 +54,7 @@ public final class GenUtils {
         templates.add(TEMPLATE_PATH + FILE_NAME_SERVICE);
         templates.add(TEMPLATE_PATH + FILE_NAME_SERVICEIMPL);
         templates.add(TEMPLATE_PATH + FILE_NAME_CONTROLLER);
+        templates.add(TEMPLATE_PATH + FILE_NAME_MANAGER);
         templates.add(TEMPLATE_PATH + FILE_NAME_PAGE);
         return templates;
     }
@@ -240,6 +242,10 @@ public final class GenUtils {
 
         if (template.contains(FILE_NAME_CONTROLLER)) {
             return packagePath + "controller" + File.separator + className + "Controller.java";
+        }
+
+        if (template.contains(FILE_NAME_MANAGER)) {
+            return packagePath + "manager" + File.separator + className + "Manager.java";
         }
 
         if (template.contains(FILE_NAME_MAPPERXML)) {

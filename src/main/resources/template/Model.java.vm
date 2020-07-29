@@ -19,8 +19,6 @@ import java.util.Date;
 * @date $!{datetime}
 * @since $!{since}
 */
-@Data
-@EqualsAndHashCode(callSuper = false)
 @TableName("${tableName}")
 public class ${className} extends BaseEntity<${className}>
 {
@@ -48,6 +46,18 @@ public class ${className} extends BaseEntity<${className}>
     #foreach ($column in $ignoreColumns)
     public static final String $column.columnNameUpperCase ="$column.columnName";
     #end
+
+    #foreach ($column in $ignoreColumns)
+    public $column.attrType get$column.attrName () {
+            return $column.attrname;
+            }
+
+    public void set$column.attrName ($column.attrType $column.attrname) {
+            this.$column.attrname = $column.attrname;
+            }
+    #end
+
+
 
     @Override
     protected Serializable pkVal(){
