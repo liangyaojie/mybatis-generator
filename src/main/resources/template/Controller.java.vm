@@ -25,4 +25,9 @@ import com.central.common.model.Result;
 @RequestMapping("/${pathName}")
 @Api(tags = "${comments}")
 public class ${className}Controller {
+    private final ${className}Service ${classname}Service;
+
+    public ${className}Controller(${className}Service ${classname}Service) {
+        this.${classname}Service = ${classname}Service;
+    }
 }

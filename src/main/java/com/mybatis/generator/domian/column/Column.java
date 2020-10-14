@@ -3,7 +3,7 @@ package com.mybatis.generator.domian.column;
 /**
  * Column
  *
- * @author chentudong
+ * @author LYJ
  * @date 2020/5/7 2:18 下午
  * @since 1.0
  */

@@ -24,7 +24,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * GenUtils
  *
- * @author chentudong
+ * @author LYJ
  * @date 2020/5/9 11:30 上午
  * @since 1.0
  */

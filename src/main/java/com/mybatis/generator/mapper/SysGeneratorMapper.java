@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * SysGeneratorMapper
  *
- * @author chentudong
+ * @author LYJ
  * @date 2020/5/9 11:25 上午
  * @since 1.0
  */

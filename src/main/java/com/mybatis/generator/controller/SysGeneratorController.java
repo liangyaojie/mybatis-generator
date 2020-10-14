@@ -13,24 +13,24 @@ import java.io.IOException;
 /**
  * SysGeneratorController
  *
- * @author chentudong
+ * @author LYJ
  * @date 2020/7/16 9:53
  * @since 1.0
  */
 @RestController
-@RequestMapping("generator")
+@RequestMapping()
 public class SysGeneratorController {
     @Autowired
     private SysGeneratorService sysGeneratorService;
 
     /**
-     * 生成代码FileUtil
+     * 生成代码FileUtilr
      */
-    @GetMapping("/code")
+    @GetMapping("code")
     public void makeCode(String tables, HttpServletResponse response) throws IOException {
         byte[] data = sysGeneratorService.generatorCode(tables.split(","));
         response.reset();
-        response.setHeader("Content-Disposition", "attachment; filename=\"generator.zip\"");
+        response.setHeader("Content-Disposition", "attachment; filename=\""+tables+".zip\"");
         response.addHeader("Content-Length", "" + data.length);
         response.setContentType("application/octet-stream; charset=UTF-8");
         IOUtils.write(data, response.getOutputStream());
